@@ -101,6 +101,9 @@ conversion_data = {
 # TEMPERATURE CONVERSION
 # ==============================
 
+# temparature is different beacuse it have different zero points
+# 1C = 33.8F and 274.15K
+
 def convert_temperature(value, from_unit, to_unit):
 
     # Convert to Celsius first
@@ -207,7 +210,10 @@ while True:
             continue
 
         # Conversion Formula
-
+        # (value * from_unit) / to_unit
+        # 5m to km means (5 * 1) / 1000
+        # 1 because in length, base value is meter (1)
+        
         result = (
             value
             * units[from_unit]
